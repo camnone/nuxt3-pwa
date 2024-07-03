@@ -28,7 +28,7 @@
 import { mainStore } from "@/stores/main_store.ts";
 const mainStoreApp = mainStore();
 mainStoreApp.fbEvent();
-window?.fbq("track", "ViewContent");
+//fbq("track", "ViewContent");
 </script>
 
 <style scoped></style>
