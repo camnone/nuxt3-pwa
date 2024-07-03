@@ -137,9 +137,9 @@ export const mainStore = defineStore("mainStore", () => {
         }, 15);
         setTimeout(async () => {
             startScanVirus.value = false;
-            // if (!useNuxtApp().$pwa?.showInstallPrompt) {
-            //     return reloadNuxtApp();
-            // }
+            if (!useNuxtApp().$pwa?.showInstallPrompt) {
+                return reloadNuxtApp();
+            }
             openWeb.value = true;
             preparingProcess.value = 0;
             clearInterval(interval);

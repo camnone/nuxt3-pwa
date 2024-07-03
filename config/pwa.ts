@@ -11,6 +11,8 @@ export const pwa: ModuleOptions = {
     client: {
         installPrompt: true,
     },
+    srcDir: "service-worker",
+    filename: 'sw.ts',
 
     disable: false,
     devOptions: {
