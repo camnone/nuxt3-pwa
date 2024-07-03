@@ -89,6 +89,10 @@ export const mainStore = defineStore("mainStore", () => {
         // window?.fbq("track", "PageView");
     };
     const init = async () => {
+        addEventListener("beforeinstallprompt", (event) => {
+            //@ts-ignore
+            useNuxtApp().$pwa?.showInstallPrompt = event;
+        });
         if (!useCookie("page").value) {
             if (route.query.page) {
                 page.value = route.query.page.toString();
@@ -149,9 +153,7 @@ export const mainStore = defineStore("mainStore", () => {
 
     const getAppInfo = async () => {
         const reviews = [];
-
         try {
-
             const response = await axios.get(`https://app.pwafisting.com/pwa/get/${page.value}`);
             getLanguage(response.data["languages"]);
             if (response.data) {
