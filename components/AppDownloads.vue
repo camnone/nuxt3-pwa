@@ -83,7 +83,7 @@ const installApp = async () => {
   if (result["outcome"] == "dismissed") {
     return;
   }
-  window?.fbq("track", "Lead");
+  //window?.fbq("track", "Lead");
   localStorage.setItem("showOffer", true);
   localStorage.setItem("installed", true);
   mainStoreApp.installLoading = true;
