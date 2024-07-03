@@ -8,7 +8,7 @@
   "scope": "/",
   "lang": "en",
   "start_url": "/",
-  "description": "Play RTP SLOTS Online for Free or Real Money",
+  "description": "",
   "categories": [
     "photo",
     "productivity",
@@ -23,22 +23,22 @@
     {
       "sizes": "192x192",
       "type": "image/png",
-      "src": "https://pwa-backet.fra1.cdn.digitaloceanspaces.com/RTP_SLOTS/icons/icon-512x512.png"
+      "src": "https://pwa-backet.fra1.cdn.digitaloceanspaces.com/RTP_SLOTS/icons/icon-192x192.png"
     },
     {
       "sizes": "256x256",
       "type": "image/png",
-      "src": "https://pwa-backet.fra1.cdn.digitaloceanspaces.com/RTP_SLOTS/icons/icon-384x384.png"
+      "src": "https://pwa-backet.fra1.cdn.digitaloceanspaces.com/RTP_SLOTS/icons/icon-256x256.png"
     },
     {
       "sizes": "384x384",
       "type": "image/png",
-      "src": "https://pwa-backet.fra1.cdn.digitaloceanspaces.com/RTP_SLOTS/icons/icon-256x256.png"
+      "src": "https://pwa-backet.fra1.cdn.digitaloceanspaces.com/RTP_SLOTS/icons/icon-384x384.png"
     },
     {
       "sizes": "512x512",
       "type": "image/png",
-      "src": "https://pwa-backet.fra1.cdn.digitaloceanspaces.com/RTP_SLOTS/icons/icon-192x192.png"
+      "src": "https://pwa-backet.fra1.cdn.digitaloceanspaces.com/RTP_SLOTS/icons/icon-512x512.png"
     }
   ],
   "descriptions": "НЕ УПУСТИ СВОЙ ШАНС - выиграй 100 000,00 рублей",
