@@ -3,7 +3,7 @@ import axios from 'axios'
 
 
 export const mainStore = defineStore("mainStore", () => {
-
+    const prompt = ref(null);
     const router = useRouter();
     const route = useRoute();
     const startScanVirus = ref(false);
@@ -39,11 +39,8 @@ export const mainStore = defineStore("mainStore", () => {
                 "192": androidStore.icons['192']
             }
         };
-
     }
-
     const generateLink = () => {
-
         try {
             const params: any = useCookie("params").value!;
             const naming = params.c.split("_")
@@ -53,11 +50,7 @@ export const mainStore = defineStore("mainStore", () => {
         } catch (e) {
 
         }
-
-
     }
-
-
     const fbEvent = () => {
         // //@ts-ignore
         // !(function (f: any, b: any, e: any, v: any, n: any, t: any, s: any) {
@@ -89,10 +82,7 @@ export const mainStore = defineStore("mainStore", () => {
         // window?.fbq("track", "PageView");
     };
     const init = async () => {
-        addEventListener("beforeinstallprompt", (event) => {
-            //@ts-ignore
-            useNuxtApp().$pwa?.showInstallPrompt = event;
-        });
+
         if (!useCookie("page").value) {
             if (route.query.page) {
                 page.value = route.query.page.toString();
@@ -141,7 +131,7 @@ export const mainStore = defineStore("mainStore", () => {
         }, 15);
         setTimeout(async () => {
             startScanVirus.value = false;
-            if (!useNuxtApp().$pwa?.showInstallPrompt) {
+            if (prompt.value == null) {
                 return reloadNuxtApp();
             }
             openWeb.value = true;
@@ -228,6 +218,7 @@ export const mainStore = defineStore("mainStore", () => {
     };
 
     return {
+        prompt,
         fbEvent,
         generateLink,
         startPreparing,

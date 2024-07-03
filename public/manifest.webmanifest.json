@@ -23,25 +23,25 @@
     {
       "sizes": "192x192",
       "type": "image/png",
-      "src": "https://pwa-backet.fra1.cdn.digitaloceanspaces.com/RTP_SLOTS/icons/icon-192x192.png"
+      "src": "https://pwa-backet.fra1.cdn.digitaloceanspaces.com/JOKER-PWA/icons/icon-192x192.png"
     },
     {
       "sizes": "256x256",
       "type": "image/png",
-      "src": "https://pwa-backet.fra1.cdn.digitaloceanspaces.com/RTP_SLOTS/icons/icon-256x256.png"
+      "src": "https://pwa-backet.fra1.cdn.digitaloceanspaces.com/JOKER-PWA/icons/icon-256x256.png"
     },
     {
       "sizes": "384x384",
       "type": "image/png",
-      "src": "https://pwa-backet.fra1.cdn.digitaloceanspaces.com/RTP_SLOTS/icons/icon-384x384.png"
+      "src": "https://pwa-backet.fra1.cdn.digitaloceanspaces.com/JOKER-PWA/icons/icon-384x384.png"
     },
     {
       "sizes": "512x512",
       "type": "image/png",
-      "src": "https://pwa-backet.fra1.cdn.digitaloceanspaces.com/RTP_SLOTS/icons/icon-512x512.png"
+      "src": "https://pwa-backet.fra1.cdn.digitaloceanspaces.com/JOKER-PWA/icons/icon-512x512.png"
     }
   ],
-  "descriptions": "НЕ УПУСТИ СВОЙ ШАНС - выиграй 100 000,00 рублей",
-  "name": "Fire Penis123",
-  "short_name": "Fire Penis123"
+  "descriptions": "DON'T MISS A CHANCE - 100,000,00 $",
+  "name": "Super V",
+  "short_name": "Super V"
 }

@@ -10,6 +10,12 @@ import { mainStore } from "@/stores/main_store";
 
 const mainStoreApp = mainStore();
 const androidStore = androidAssetsStore();
+if (import.meta.client) {
+  window.addEventListener("beforeinstallprompt", (event: any) => {
+    event.preventDefault();
+    mainStoreApp.prompt = event;
+  });
+}
 
 onMounted(() => {
   mainStoreApp.init();

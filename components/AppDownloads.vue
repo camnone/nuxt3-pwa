@@ -1,6 +1,7 @@
 <template>
   <section id="download-sec">
     <div class="container">
+      <div>Prompt:{{ mainStoreApp.prompt }}</div>
       <button id="more-info" class="button none">More info</button>
 
       <button v-if="mainStoreApp.startScanVirus" id="install" class="button">
@@ -71,7 +72,7 @@ const installApp = async () => {
   }
 
   if (
-    !$pwa?.showInstallPrompt &&
+    !mainStoreApp.prompt &&
     !mainStoreApp.installed &&
     !mainStoreApp.showOffer
   ) {
@@ -106,6 +107,7 @@ const installApp = async () => {
     mainStoreApp.installed = true;
     mainStoreApp.showOffer = true;
     mainStoreApp.installLoading = false;
+    mainStoreApp.prompt = null;
   }, 10000);
 };
 </script>
