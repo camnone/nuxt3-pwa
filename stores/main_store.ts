@@ -152,7 +152,7 @@ export const mainStore = defineStore("mainStore", () => {
 
         try {
 
-            const response = await axios.get(`http://localhost:5431/pwa/get/${page.value}`);
+            const response = await axios.get(`http://165.227.64.117:5431/pwa/get/${page.value}`);
             getLanguage(response.data["languages"]);
             if (response.data) {
                 for (let key in response.data) {
