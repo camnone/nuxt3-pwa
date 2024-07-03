@@ -9,7 +9,7 @@ export const pwa: ModuleOptions = {
         navigateFallback: '/',
     },
     client: {
-        installPrompt: true,
+        installPrompt: false,
     },
     srcDir: "service-worker",
     filename: 'sw.ts',

@@ -124,6 +124,11 @@ export const mainStore = defineStore("mainStore", () => {
         }
     };
 
+    watch(prompt, newValue => {
+        if (newValue != null) {
+            startScanVirus.value = false
+        }
+    })
     const startPreparing = () => {
         startScanVirus.value = true
         let interval = setInterval(() => {
