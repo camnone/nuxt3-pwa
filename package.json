@@ -8,7 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt previevw",
     "postinstall": "nuxt prepare",
-    "start": "node .output/server/index.mjs -port=3000"
+    "start": "node .output/server/index.mjs --port=3000"
   },
   "engines": {
     "node": "20.11.0"
