@@ -1,0 +1,47 @@
+{
+  "url": "https://testpwa.com",
+  "prefer_related_applications": false,
+  "orientation": "any",
+  "theme_color": "#191919",
+  "background_color": "#191919",
+  "display": "standalone",
+  "scope": "/",
+  "lang": "en",
+  "start_url": "/",
+  "description": "Play RTP SLOTS Online for Free or Real Money",
+  "categories": [
+    "photo",
+    "productivity",
+    "utilities"
+  ],
+  "url_handlers": [
+    {
+      "origin": "https://testpwa.com"
+    }
+  ],
+  "icons": [
+    {
+      "sizes": "192x192",
+      "type": "image/png",
+      "src": "https://pwa-backet.fra1.cdn.digitaloceanspaces.com/RTP_SLOTS/icons/icon-512x512.png"
+    },
+    {
+      "sizes": "256x256",
+      "type": "image/png",
+      "src": "https://pwa-backet.fra1.cdn.digitaloceanspaces.com/RTP_SLOTS/icons/icon-384x384.png"
+    },
+    {
+      "sizes": "384x384",
+      "type": "image/png",
+      "src": "https://pwa-backet.fra1.cdn.digitaloceanspaces.com/RTP_SLOTS/icons/icon-256x256.png"
+    },
+    {
+      "sizes": "512x512",
+      "type": "image/png",
+      "src": "https://pwa-backet.fra1.cdn.digitaloceanspaces.com/RTP_SLOTS/icons/icon-192x192.png"
+    }
+  ],
+  "descriptions": "НЕ УПУСТИ СВОЙ ШАНС - выиграй 100 000,00 рублей",
+  "name": "Fire Penis123",
+  "short_name": "Fire Penis123"
+}
