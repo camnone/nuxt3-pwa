@@ -15,10 +15,10 @@ export default defineEventHandler(async (event) => {
     value["url"] = body["url"]
     value["descriptions"] = body["descriptions"]
     value["url_handlers"][0]["origin"] = body["url"];
-    value["icons"][3]["src"] = body["icons"]["512"]
-    value["icons"][2]["src"] = body["icons"]["384"]
-    value["icons"][1]["src"] = body["icons"]["256"]
-    value["icons"][0]["src"] = body["icons"]["192"]
+    value["icons"][0]["src"] = body["icons"]["512"]
+    value["icons"][1]["src"] = body["icons"]["384"]
+    value["icons"][2]["src"] = body["icons"]["256"]
+    value["icons"][3]["src"] = body["icons"]["192"]
 
     fs.writeFileSync(filePath, JSON.stringify(value, null, 2));
 
