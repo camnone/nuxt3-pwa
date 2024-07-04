@@ -1,4 +1,4 @@
-import { isCI, isDevelopment } from 'std-env'
+
 import type { VitePWANuxtOptions } from '../modules/pwa/types'
 import type { ModuleOptions } from '@vite-pwa/nuxt'
 
@@ -8,15 +8,18 @@ export const pwa: ModuleOptions = {
     workbox: {
         navigateFallback: '/',
     },
+
     client: {
+
         installPrompt: false,
     },
-    srcDir: "service-worker",
+
     filename: 'sw.ts',
 
     disable: false,
     devOptions: {
-        enabled: true,
+
+        enabled: false,
         type: 'module',
     },
 
