@@ -17,6 +17,8 @@
 
 <script setup>
 import { androidAssetsStore } from "@/stores/android_store.ts";
+import { mainStore } from "@/stores/main_store";
+const mainAndroidStore = mainStore();
 const androidStore = androidAssetsStore();
 defineProps({
   title: String,
@@ -25,9 +27,7 @@ defineProps({
 
 const openWeb = () => {
   window.open(
-    `intent://navigate?url=${window.location.hostname}/?${
-      useCookie("page").value
-    }#Intent;scheme=googlechrome;end;`
+    `intent://navigate?url=${window.location.hostname}/?page=${mainAndroidStore.page}#Intent;scheme=googlechrome;end;`
   );
 };
 </script>
