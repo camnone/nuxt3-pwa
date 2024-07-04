@@ -20,7 +20,6 @@ if (import.meta.client) {
 
 onMounted(() => {
   mainStoreApp.init();
-
   document.body.classList.add("dark");
   const link = document.createElement("link");
   link.rel = "manifest";

@@ -25,8 +25,8 @@ defineProps({
 
 const openWeb = () => {
   window.open(
-    `intent://navigate?url=${window.location.hostname}/${
-      localStorage.getItem("params") ? localStorage.getItem("params") : ""
+    `intent://navigate?url=${window.location.hostname}/?${
+      useCookie("page").value
     }#Intent;scheme=googlechrome;end;`
   );
 };
