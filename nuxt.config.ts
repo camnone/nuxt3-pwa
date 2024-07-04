@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     "@nuxt/image"
   ],
   ssr: false,
-
+  production: true,
 
   pwa,
   compatibilityDate: '2024-07-03',

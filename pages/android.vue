@@ -18,7 +18,7 @@
       <LazyAppRedirectPopUp
         description="you need to go to the browser"
         title="To install the application"
-        v-if="mainStore.redirectToGoogle"
+        v-if="mainStoreApp.redirectToGoogle"
       />
     </ClientOnly>
   </NuxtLayout>
