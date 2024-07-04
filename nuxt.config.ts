@@ -3,12 +3,14 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   //@ts-ignore
   css: ['@/assets/scss/main.scss'],
+
   modules: [
     '@pinia/nuxt',
     "@vite-pwa/nuxt",
     "nuxt-icons",
     "@nuxt/image"
   ],
+  ssr: false,
 
 
   pwa,

@@ -13,9 +13,8 @@ export const pwa: ModuleOptions = {
 
         installPrompt: false,
     },
-
+    minify: true,
     filename: 'sw.ts',
-
     disable: false,
     devOptions: {
 
