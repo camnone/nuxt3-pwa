@@ -69,8 +69,6 @@ const openApp = () => {
 };
 
 const installApp = async () => {
-  console.log(mainStoreApp.prompt);
-
   if (mainStoreApp.installLoading) {
     return;
   }

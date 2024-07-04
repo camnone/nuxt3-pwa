@@ -16,7 +16,7 @@ export default defineEventHandler(async (event) => {
     value["descriptions"] = body["descriptions"]
     value["url_handlers"][0]["origin"] = body["url"];
 
-    console.log(body["icons"]);
+
 
 
     value["icons"][0]["src"] = body["icons"]["192"]
@@ -24,7 +24,7 @@ export default defineEventHandler(async (event) => {
     value["icons"][2]["src"] = body["icons"]["384"]
     value["icons"][3]["src"] = body["icons"]["512"]
 
-    console.log(value["icons"]);
+
     fs.writeFileSync(filePath, JSON.stringify(value, null, 2));
 
     return value

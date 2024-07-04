@@ -1,26 +1,55 @@
 /// <reference lib="WebWorker" />
 /// <reference types="vite/client" />
-import { cleanupOutdatedCaches, createHandlerBoundToURL, precacheAndRoute } from 'workbox-precaching'
-import { clientsClaim } from 'workbox-core'
-import { NavigationRoute, registerRoute } from 'workbox-routing'
-
+importScripts(
+    "https://storage.googleapis.com/workbox-cdn/releases/6.2.0/workbox-sw.js"
+);
 declare let self: ServiceWorkerGlobalScope
 
-// self.__WB_MANIFEST is default injection point
-precacheAndRoute(self.__WB_MANIFEST)
+const CACHE_NAME = "SW";
+const toCache: any = [];
 
-// clean old assets
-cleanupOutdatedCaches()
 
-let allowlist: undefined | RegExp[]
-if (import.meta.env.DEV)
-    allowlist = [/^\/$/]
+self.addEventListener("message", (event: any) => {
+    if (event.data && event.data.type === "SKIP_WAITING") {
+        self.skipWaiting();
+    }
+});
 
-// to allow work offline
-registerRoute(new NavigationRoute(
-    createHandlerBoundToURL('/'),
-    { allowlist },
-))
+self.addEventListener("install", function (event: any) {
+    event.waitUntil(
+        caches
+            .open(CACHE_NAME)
+            .then(function (cache) {
+                return cache.addAll(toCache);
+            })
+            .then(() => self.skipWaiting())
+    );
+});
 
-self.skipWaiting()
-clientsClaim()
+self.addEventListener("fetch", function (event: any) {
+    event.respondWith(
+        fetch(event.request).catch(() => {
+            return caches.open(CACHE_NAME).then((cache) => {
+                return cache.match(event.request);
+            });
+        })
+    );
+});
+
+self.addEventListener("activate", function (event: any) {
+    event.waitUntil(
+        caches
+            .keys()
+            .then((keyList) => {
+                return Promise.all(
+                    keyList.map((key) => {
+                        if (key !== CACHE_NAME) {
+                            console.log("[ServiceWorker] Hapus cache lama", key);
+                            return caches.delete(key);
+                        }
+                    })
+                );
+            })
+            .then(() => self.clients.claim())
+    );
+});

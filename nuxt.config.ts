@@ -7,9 +7,7 @@ export default defineNuxtConfig({
   ],
 
   modules: [
-    '@nuxt/image',
     '@pinia/nuxt',
-    '@nuxtjs/i18n',
     "@vite-pwa/nuxt",
     "nuxt-icons",
     "@nuxt/image"

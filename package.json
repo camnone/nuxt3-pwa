@@ -8,7 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt previevw",
     "postinstall": "nuxt prepare",
-    "start": "nuxt build node .output/server/index.mjs --port=3000"
+    "start": "node .output/server/index.mjs --port=3000"
   },
   "engines": {
     "node": "20.11.0"
@@ -24,7 +24,6 @@
     "vue": "latest"
   },
   "devDependencies": {
-    "@nuxtjs/i18n": "^8.3.1",
     "sass": "^1.77.6"
   }
 }
