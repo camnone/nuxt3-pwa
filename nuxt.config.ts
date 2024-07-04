@@ -6,7 +6,14 @@ export default defineNuxtConfig({
     '@/assets/scss/main.scss',
   ],
 
-  modules: ['@pinia/nuxt', '@nuxtjs/i18n', "@vite-pwa/nuxt", "nuxt-icons"],
+  modules: [
+    '@nuxt/image',
+    '@pinia/nuxt',
+    '@nuxtjs/i18n',
+    "@vite-pwa/nuxt",
+    "nuxt-icons",
+    "@nuxt/image"
+  ],
   pwa,
   compatibilityDate: '2024-07-03',
 },

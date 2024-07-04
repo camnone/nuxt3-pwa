@@ -10,11 +10,9 @@
         href="javascript:void(0);"
         class="img-item"
         v-for="item in androidStore.screens"
-        ><picture
-          ><source :srcset="item" type="image/png" />
-          <source :srcset="item" type="image/png" />
-          <img :src="item" /></picture
-      ></a>
+      >
+        <NuxtImg :src="item" format="webp" loading="lazy" />
+      </a>
     </div>
   </section>
 </template>

@@ -2,7 +2,11 @@
   <div class="popup">
     <div class="popup-inner" @click="openWeb()">
       <div class="img">
-        <img :src="androidStore.iconUrl" :alt="androidStore.name" />
+        <NuxtImg
+          format="webp"
+          :src="androidStore.iconUrl"
+          :alt="androidStore.name"
+        />
       </div>
       <div class="text1">{{ title }}</div>
       <div class="text2">{{ description }}</div>

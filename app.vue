@@ -10,6 +10,7 @@ import { mainStore } from "@/stores/main_store";
 
 const mainStoreApp = mainStore();
 const androidStore = androidAssetsStore();
+
 if (import.meta.client) {
   window.addEventListener("beforeinstallprompt", (event: any) => {
     event.preventDefault();
@@ -19,6 +20,9 @@ if (import.meta.client) {
 
 onMounted(() => {
   mainStoreApp.init();
+
+  console.log(useCookie("name").value);
+
   document.body.classList.add("dark");
   const link = document.createElement("link");
   link.rel = "manifest";

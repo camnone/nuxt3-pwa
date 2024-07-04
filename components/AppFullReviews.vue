@@ -5,10 +5,11 @@
         <i class="material-icons-outlined">arrow_back</i>
       </button>
       <div class="img">
-        <img
+        <NuxtImg
+          format="webp"
+          loading="lazy"
           :src="androidStore.iconUrl"
           :alt="androidStore.name"
-          loading="lazy"
         />
       </div>
       <div class="name">
@@ -31,7 +32,12 @@
       <div class="review-item" v-for="item in androidStore.reviews">
         <header>
           <div class="img">
-            <img :src="item.imageUrl" alt="Noah" loading="lazy" />
+            <NuxtImg
+              format="webp"
+              loading="lazy"
+              :src="item.imageUrl"
+              alt="Noah"
+            />
           </div>
           <div class="name">{{ item.name }}</div>
           <button class="btn-icon">

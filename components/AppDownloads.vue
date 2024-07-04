@@ -22,8 +22,10 @@
         class="button install-btn"
       >
         <span class="yellow-text"
-          ><span
-            ><img
+          ><span>
+            <NuxtImg
+              format="webp"
+              loading="lazy"
               src="https://pwa-backet.fra1.cdn.digitaloceanspaces.com/RTP_SLOTS/other_images/rapid.png"
           /></span>
           Rapid install</span
@@ -63,10 +65,12 @@ const router = useRouter();
 const openApp = () => {
   localStorage.setItem("showOffer", true);
   localStorage.setItem("installed", true);
-  router.replace("/offer");
+  window.open(window.location.href, "_blank");
 };
 
 const installApp = async () => {
+  console.log(mainStoreApp.prompt);
+
   if (mainStoreApp.installLoading) {
     return;
   }
@@ -79,7 +83,7 @@ const installApp = async () => {
     return mainStoreApp.startPreparing();
   }
 
-  const result = await $pwa.install();
+  const result = await mainStoreApp.prompt.prompt();
 
   if (result["outcome"] == "dismissed") {
     return;

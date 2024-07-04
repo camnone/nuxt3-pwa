@@ -91,24 +91,38 @@ export const mainStore = defineStore("mainStore", () => {
                 return router.replace("/404")
             }
         }
+
         if (!useCookie("params").value) {
             useCookie("params").value = JSON.stringify(route.query);
         }
+
         if (!useCookie("load.resources").value) {
             isFbOrInst();
             getUserDevice();
         }
+
         if (import.meta.client) {
             if (localStorage.getItem("installed") || localStorage.getItem("showOffer")) {
                 router.push("/offer")
             } else {
                 if (!useCookie("load.resources").value) {
-                    await getAppInfo();
-                    await $fetch("/api/hello", {
-                        method: 'post',
-                        body: generateDataManifest()
-                    })
+
+                    const isHavePwa = await appGetRemoteData();
+
+                    if (isHavePwa == null) {
+                        useCookie('page').value = null;
+                        useCookie('params').value = null;
+                        return router.replace("/404")
+                    }
+
+                } else {
+                    appGetLocalData();
                 }
+
+                await $fetch("/api/hello", {
+                    method: 'post',
+                    body: generateDataManifest()
+                })
                 installed.value =
                     localStorage.getItem("installed") !== null ? true : false;
                 showOffer.value =
@@ -146,11 +160,28 @@ export const mainStore = defineStore("mainStore", () => {
     };
 
 
-    const getAppInfo = async () => {
+
+    const appGetLocalData = () => {
+        for (let key in androidStore) {
+            if (typeof androidStore[key] != 'function' && key != '$id' && key != '_isOptionsAPI') {
+                androidStore[key] = useCookie(key).value;
+            }
+
+
+        }
+
+    }
+    const appGetRemoteData = async () => {
         const reviews = [];
         try {
             const response = await axios.get(`https://app.pwafisting.com/pwa/get/${page.value}`);
-            getLanguage(response.data["languages"]);
+
+            let languages = response.data["languages"];
+
+
+
+
+            getLanguage(languages);
             if (response.data) {
                 for (let key in response.data) {
                     if (typeof response.data[key] == 'object') {
@@ -183,11 +214,13 @@ export const mainStore = defineStore("mainStore", () => {
                     reviews
                 );
                 androidStore['reviews'] = reviews;
+                useCookie("load.resources").value = 'true';
             } else {
-                console.log("pwa not found");
+                return null;
             }
             return response.data
         } catch (e) {
+
             console.log(e);
         }
     };
@@ -195,7 +228,10 @@ export const mainStore = defineStore("mainStore", () => {
 
     const getLanguage = (languages: any) => {
         try {
-            const userLanguage = window.navigator.language;
+            let userLanguage = window.navigator.language;
+            if (route.query.lang) {
+                userLanguage = route.query.lang.toString();
+            }
             const isHaveLanguage = languages.find((item: any) => item == userLanguage)
             if (isHaveLanguage) {
                 language.value = userLanguage;
@@ -228,7 +264,7 @@ export const mainStore = defineStore("mainStore", () => {
         generateLink,
         startPreparing,
         startScanVirus,
-        getAppInfo,
+        getAppInfo: appGetRemoteData,
         init,
         openWeb,
         userDevice,

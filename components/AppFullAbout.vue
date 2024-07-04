@@ -5,7 +5,12 @@
         <i class="material-icons-outlined">arrow_back</i>
       </button>
       <div class="img">
-        <img :src="androidStore.iconUrl" :alt="androidStore.name" />
+        <NuxtImg
+          format="webp"
+          loading="lazy"
+          :src="androidStore.iconUrl"
+          :alt="androidStore.name"
+        />
       </div>
       <div class="name">
         <div class="title-aps">{{ androidStore.name }}</div>

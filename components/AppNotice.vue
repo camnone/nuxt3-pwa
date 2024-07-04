@@ -8,7 +8,8 @@
       <div class="container">
         <header>
           <div class="img">
-            <img
+            <NuxtImg
+              format="webp"
               :src="androidStore.iconUrl"
               :alt="androidStore.name"
               loading="lazy"

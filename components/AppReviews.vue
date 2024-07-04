@@ -4,7 +4,12 @@
       <div class="review-item" v-for="(item, index) in shortReview">
         <header>
           <div class="img">
-            <img :src="item.imageUrl" alt="Noah" loading="lazy" />
+            <NuxtImg
+              format="webp"
+              :src="item.imageUrl"
+              alt="Noah"
+              loading="lazy"
+            />
           </div>
           <div class="name">{{ item.name }}</div>
           <button class="btn-icon">

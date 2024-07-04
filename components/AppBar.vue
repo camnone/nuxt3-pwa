@@ -1,13 +1,14 @@
 <template>
   <div ref="topBar" class="topbar" id="topbar">
-    <img
-      alt=""
-      class="left"
+    <NuxtImg
+      format="webp"
       loading="lazy"
+      class="left"
       src="https://pwa-backet.fra1.cdn.digitaloceanspaces.com/RTP_SLOTS/other_images/google-play.png"
     />
-    <img
-      alt=""
+
+    <NuxtImg
+      format="webp"
       class="right"
       loading="lazy"
       src="https://pwa-backet.fra1.cdn.digitaloceanspaces.com/RTP_SLOTS/other_images/top-developer.png"

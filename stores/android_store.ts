@@ -5,7 +5,7 @@ import { ref } from "vue";
 export const androidAssetsStore = defineStore("androidStore", () => {
 
 
-    const name = ref(useCookie('name').value);
+    const name = ref(useCookie('name').value ?? "");
     const fbqKey = ref((useCookie("fbqKey").value ?? ""));
     const onesignalKey = ref((useCookie("onesignalKey").value ?? ""));
     const offerLink = ref((useCookie("offerLink").value ?? ""));
