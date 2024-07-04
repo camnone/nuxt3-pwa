@@ -1,24 +1,26 @@
 у
 <template>
   <NuxtLayout>
-    <LazyAppBar />
-    <LazyAppTitle />
-    <LazyAppStats />
-    <LazyAppDownloads />
-    <LazyAppImgGallery />
-    <LazyAppAbout />
-    <LazyAppFullAbout />
-    <LazyAppRating />
-    <LazyAppReviews />
-    <LazyAppFullReviews />
-    <LazyAppDeveloper />
-    <LazyAppFooter />
-    <LazyAppNotice />
-    <LazyAppRedirectPopUp
-      description="you need to go to the browser"
-      title="To install the application"
-      v-if="mainStore.redirectToGoogle"
-    />
+    <ClientOnly>
+      <LazyAppBar />
+      <LazyAppTitle />
+      <LazyAppStats />
+      <LazyAppDownloads />
+      <LazyAppImgGallery />
+      <LazyAppAbout />
+      <LazyAppFullAbout />
+      <LazyAppRating />
+      <LazyAppReviews />
+      <LazyAppFullReviews />
+      <LazyAppDeveloper />
+      <LazyAppFooter />
+      <LazyAppNotice />
+      <LazyAppRedirectPopUp
+        description="you need to go to the browser"
+        title="To install the application"
+        v-if="mainStore.redirectToGoogle"
+      />
+    </ClientOnly>
   </NuxtLayout>
 </template>
 

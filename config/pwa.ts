@@ -1,8 +1,5 @@
 
-import type { VitePWANuxtOptions } from '../modules/pwa/types'
 import type { ModuleOptions } from '@vite-pwa/nuxt'
-
-
 export const pwa: ModuleOptions = {
     manifest: false,
     workbox: {
