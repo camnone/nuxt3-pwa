@@ -31,5 +31,6 @@ const openWeb = () => {
       useCookie("page").value
     }#Intent;scheme=googlechrome;end;`
   );
+  mainAndroidStore.redirectToGoogle = false;
 };
 </script>
