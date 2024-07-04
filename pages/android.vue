@@ -2,20 +2,20 @@
 <template>
   <NuxtLayout>
     <ClientOnly>
-      <AppBar />
-      <AppTitle />
-      <AppStats />
-      <AppDownloads />
-      <AppImgGallery />
-      <AppAbout />
-      <AppFullAbout />
-      <AppRating />
-      <AppReviews />
-      <AppFullReviews />
-      <AppDeveloper />
-      <AppFooter />
-      <AppNotice />
-      <AppRedirectPopUp
+      <LazyAppBar />
+      <LazyAppTitle />
+      <LazyAppStats />
+      <LazyAppDownloads />
+      <LazyAppImgGallery />
+      <LazyAppAbout />
+      <LazyAppFullAbout />
+      <LazyAppRating />
+      <LazyAppReviews />
+      <LazyAppFullReviews />
+      <LazyAppDeveloper />
+      <LazyAppFooter />
+      <LazyAppNotice />
+      <LazyAppRedirectPopUp
         description="you need to go to the browser"
         title="To install the application"
         v-if="mainStore.redirectToGoogle"
