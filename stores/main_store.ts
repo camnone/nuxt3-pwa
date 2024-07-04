@@ -153,7 +153,10 @@ export const mainStore = defineStore("mainStore", () => {
             if (prompt.value == null) {
                 return reloadNuxtApp();
             }
-            openWeb.value = true;
+            if (prompt.value == null) {
+                openWeb.value = true;
+            }
+
             preparingProcess.value = 0;
             clearInterval(interval);
         }, 15000);

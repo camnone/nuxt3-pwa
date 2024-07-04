@@ -1,7 +1,6 @@
 <template>
   <section id="download-sec">
     <div class="container">
-      <div>Prompt:{{ mainStoreApp.prompt }}</div>
       <button id="more-info" class="button none">More info</button>
 
       <button v-if="mainStoreApp.startScanVirus" id="install" class="button">
